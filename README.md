@@ -16,21 +16,41 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Playwright for automation testing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Run this script to laund automation tests
 
-## Learn More
+```bash
+pnpm test:e2e
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses wallet connect to connect to web3 wallets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Step 1: Get projectId from below by creating a project.
 
-## Deploy on Vercel
+```link
+https://cloud.walletconnect.com
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Step 2:
+Create .env.local root of this repository and add the project id that you create in wallet collect as below
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=<your_project_id>
+```
+
+Above setup should be able to get you to start the project by running `pnpm dev`
+
+## Tech Stack & libraries used
+
+1. [NextJS](https://nextjs.org)
+2. [Tanstack Query](https://tanstack.com)
+3. [wagmi](https://wagmi.sh/) for interacting with blockchain from frontend
+4. [web3modal for wagmi](https://www.npmjs.com/package/@web3modal/wagmi)
+5. [ethers](https://docs.ethers.org/v5)
+6. [Tailwind](https://tailwindcss.com/) with [daisyui](react-toastify)
+7. [next-intl for Internationalization](https://next-intl-docs.vercel.app)
+8. [vitest](https://vitest.dev) for unit testing
+9. [Playwright](https://playwright.dev) for automation tests
