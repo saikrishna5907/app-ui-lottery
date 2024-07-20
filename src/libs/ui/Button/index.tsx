@@ -13,6 +13,8 @@ const Button = (props: TButtonProps) => {
     wide = false,
     outline = false,
     buttonSize = 'lg',
+    icon,
+    iconPosition = 'start',
     ...rest
   } = props;
   const { 'data-testid': dataTestId = 'button', disabled } = rest;
@@ -21,7 +23,6 @@ const Button = (props: TButtonProps) => {
     <Spinner loading={loading} aria-label="Loading Spinner" data-testid={`${dataTestId}-loader`} />
   );
 
-  const btnColourClasses = disabled ? 'bg-indigo-200 text-gray-600' : 'bg-indigo-400 text-slate-50';
   const responsiveClasses = responsive && 'btn-xs sm:btn-sm md:btn-md lg:btn-lg';
   const wideClasses = wide && 'btn-wide';
   const outlineClasses = outline && 'btn-outline';
@@ -39,9 +40,12 @@ const Button = (props: TButtonProps) => {
         className,
       )}
       {...rest}
+      disabled={disabled || loading}
     >
       {loadingPosition === 'start' && loader}
+      {icon && iconPosition === 'start' && icon}
       {title}
+      {icon && iconPosition === 'end' && icon}
       {loadingPosition === 'end' && loader}
     </button>
   );

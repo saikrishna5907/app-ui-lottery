@@ -11,6 +11,7 @@
     "enter-lottery-cta": "Enter Lottery",
     "loading": "Loading",
     "entrance-fee": "Entrance Fee",
-    "confirming-transaction": "Pending Transaction Confirmation"
+    "confirming-transaction": "Pending Transaction Confirmation",
+    "first-player-msg": "You are the first player in the lottery. Good luck!"
   }
 }

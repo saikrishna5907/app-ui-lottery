@@ -8,7 +8,8 @@ export type TButtonType =
   | 'btn-info'
   | 'btn-success'
   | 'btn-warning'
-  | 'btn-error';
+  | 'btn-error'
+  | 'btn-block';
 
 export type TButtonProps = Omit<
   React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
@@ -23,4 +24,6 @@ export type TButtonProps = Omit<
   outline?: boolean;
   wide?: boolean;
   buttonSize?: 'sm' | 'xs' | 'lg';
+  icon?: React.ReactNode;
+  iconPosition?: 'start' | 'end';
 };
